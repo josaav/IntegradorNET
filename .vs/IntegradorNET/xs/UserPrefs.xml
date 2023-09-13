@@ -1,0 +1,40 @@
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{A5038715-AF7E-4D76-B930-57308ABC76CA}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="IntegradorNET/Entities/Servicio.cs">
+    <Files>
+      <File FileName="IntegradorNET/Entities/Servicio.cs" Line="11" Column="6" />
+      <File FileName="IntegradorNET/Entities/Proyecto.cs" />
+      <File FileName="IntegradorNET/Entities/Usuario.cs" />
+      <File FileName="IntegradorNET/Entities/Trabajo.cs" />
+      <File FileName="IntegradorNET/Controllers/ServicioController.cs" />
+      <File FileName="IntegradorNET/Controllers/ProyectoController.cs" />
+      <File FileName="IntegradorNET/Controllers/TrabajoController.cs" />
+      <File FileName="IntegradorNET/Controllers/UsuarioController.cs" />
+      <File FileName="IntegradorNET/DataAccess/ApplicationDbContext.cs" />
+      <File FileName="IntegradorNET/appsettings.json" />
+      <File FileName="IntegradorNET/Program.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="IntegradorNET" expanded="True">
+            <Node name="IntegradorNET" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="DataAccess" expanded="True">
+                <Node name="Repositories" expanded="True" />
+              </Node>
+              <Node name="Entities" expanded="True" />
+              <Node name="Migrations" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.IntegradorNET PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>
