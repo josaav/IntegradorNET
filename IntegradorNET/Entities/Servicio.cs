@@ -21,9 +21,6 @@ namespace IntegradorNET.Entities
         [Column("estado")]
         public EstadoServicio Estado { get; set; }
 
-        [Column("valorHora", TypeName = "DECIMAL(19,4)")]
-        public int ValorHora { get; set; }
-
         [Column("eliminado")]
         public int Eliminado { get; set; } = 0;
     }

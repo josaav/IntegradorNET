@@ -7,8 +7,8 @@ namespace IntegradorNET.Entities
     public enum EstadoProyecto
     {
         Pendiente = 1,
-		Confirmado = 2,
-		Terminado = 3
+        Confirmado = 2,
+        Terminado = 3
 	}
 
 	public class Proyecto

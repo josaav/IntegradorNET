@@ -4,14 +4,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IntegradorNET.Entities
 {
-	public class Usuario
-	{
-        public enum TipoUsuario
-        {
-            Administrador = 1,
-            Consultor = 2
-        }
+    public enum TipoUsuario
+    {
+        Administrador = 1,
+        Consultor = 2
+    }
 
+    public class Usuario
+	{
         [Column("codUsuario")]
         public int Id { get; set; }
 
@@ -21,10 +21,13 @@ namespace IntegradorNET.Entities
         [Column("dni")]
         public int Dni { get; set; }
 
+        [Column("email")]
+        public string Email { get; set; }
+
         [Column("tipo")]
         public TipoUsuario Tipo { get; set; }
 
-        [Column("contrasena", TypeName = "VARCHAR(50)")]
+        [Column("contrasena", TypeName = "VARCHAR(100)")]
         public string Contrasena { get; set; }
 
         [Column("eliminado")]
