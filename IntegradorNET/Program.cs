@@ -1,4 +1,5 @@
 ﻿using IntegradorNET.DataAccess;
+using IntegradorNET.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer("name=DefaultConnection");
 });
+
+builder.Services.AddScoped<IUnitOfWork, UnitOfWorkService>();
 
 var app = builder.Build();
 
