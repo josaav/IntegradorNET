@@ -23,10 +23,23 @@ namespace IntegradorNET.Controllers
 		public async Task<IActionResult> Login(AuthenticateDto dto)
 		{
 			var userCredentials = await _unitOfWork.UsuarioRepository.AuthenticateCredentials(dto);
-			if (userCredentials is null) return Unauthorized("Las credenciales son incorrectas");
+			if (userCredentials is null) return Unauthorized("Las credenciales son incorrectas o el usuario fue eliminado");
 
 			var token = _tokenJWTHelper.GenerateToken(userCredentials);
-			return Ok(token);
+			var usuario = new UsuarioLoginDto()
+			{
+				Nombre = userCredentials.Nombre,
+				Dni = userCredentials.Dni,
+				Email = userCredentials.Email,
+				Tipo = new TipoUsuarioLoginDto
+				{
+					Id = (int)userCredentials.Tipo,
+					Nombre = userCredentials.Tipo.ToString()
+				},
+				Token = token
+			};
+
+			return Ok(usuario);
 		}
 	}
 }

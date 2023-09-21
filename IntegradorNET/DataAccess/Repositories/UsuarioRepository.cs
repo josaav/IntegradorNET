@@ -17,7 +17,7 @@ namespace IntegradorNET.DataAccess.Repositories.Interfaces
 		{
 			var contrasenaEncriptada = PasswordEncryptHelper.EncryptPassword(dto.Contrasena, dto.Email);
 
-            return await _context.Usuarios.SingleOrDefaultAsync(x => x.Email == dto.Email && x.Contrasena == contrasenaEncriptada);
+            return await _context.Usuarios.SingleOrDefaultAsync(x => x.Email == dto.Email && x.Contrasena == contrasenaEncriptada && x.Eliminado == 0);
 		}
 	}
 }
