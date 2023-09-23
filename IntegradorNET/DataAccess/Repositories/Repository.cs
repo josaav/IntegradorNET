@@ -19,6 +19,27 @@ namespace IntegradorNET.DataAccess.Repositories
             var lista = await _context.Set<T>().ToListAsync();
             return lista.Where(entity => (int)entity.GetType().GetProperty("Eliminado").GetValue(entity) == 0).ToList();
         }
+
+		public virtual async Task<bool> Insert (T entity)
+		{
+			await _context.Set<T>().AddAsync(entity);
+			return true;
+		}
+
+        public virtual Task<bool> Actualizar(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual Task<bool> Eliminar(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual Task<bool> Restaurar(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

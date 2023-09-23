@@ -28,6 +28,7 @@
     <None Remove="Migrations\" />
     <None Remove="Helpers\" />
     <None Remove="DataAccess\DatabaseSeeding\" />
+    <None Remove="Infrastructure\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataAccess\" />
@@ -39,5 +40,6 @@
     <Folder Include="Migrations\" />
     <Folder Include="Helpers\" />
     <Folder Include="DataAccess\DatabaseSeeding\" />
+    <Folder Include="Infrastructure\" />
   </ItemGroup>
 </Project>

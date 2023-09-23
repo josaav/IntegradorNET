@@ -62,8 +62,7 @@ namespace AlkemyUmsa
                 option.AddPolicy("AdminConsultor", policy =>
 
                 {
-                    policy.RequireClaim(ClaimTypes.Role, "Administrador");
-                    policy.RequireClaim(ClaimTypes.Role, "Consultor");
+                    policy.RequireClaim(ClaimTypes.Role, "Administrador", "Consultor");
                 });
             });
 

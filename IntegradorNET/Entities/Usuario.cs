@@ -1,6 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using IntegradorNET.DTOs;
+using IntegradorNET.Helpers;
 
 namespace IntegradorNET.Entities
 {
@@ -32,6 +34,30 @@ namespace IntegradorNET.Entities
 
         [Column("eliminado")]
         public int Eliminado { get; set; } = 0;
+
+        public Usuario(UsuarioRegistroDto dto)
+        {
+            Nombre = dto.Nombre;
+            Dni = dto.Dni;
+            Email = dto.Email;
+            Tipo = (TipoUsuario)dto.Tipo;
+            Contrasena = PasswordEncryptHelper.EncryptPassword(dto.Contrasena, dto.Email);
+        }
+
+        public Usuario(UsuarioRegistroDto dto, int id)
+        {
+            Id = id;
+            Nombre = dto.Nombre;
+            Dni = dto.Dni;
+            Email = dto.Email;
+            Tipo = (TipoUsuario)dto.Tipo;
+            Contrasena = PasswordEncryptHelper.EncryptPassword(dto.Contrasena, dto.Email);
+        }
+
+        public Usuario()
+        {
+
+        }
 
     }
 }
