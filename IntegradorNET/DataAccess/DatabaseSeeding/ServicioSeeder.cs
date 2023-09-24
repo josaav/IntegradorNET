@@ -15,6 +15,7 @@ namespace IntegradorNET.DataAccess.DatabaseSeeding
                     Id = 1,
                     Descripcion = "Exploración Geofísica",
                     Estado = (EstadoServicio)1,
+                    ValorHora = 500,
                     Eliminado = 0
                 },
                 new Servicio
@@ -22,6 +23,7 @@ namespace IntegradorNET.DataAccess.DatabaseSeeding
                     Id = 2,
                     Descripcion = "Peforación Direccional y Horizontal",
                     Estado = (EstadoServicio)1,
+                    ValorHora = 1000,
                     Eliminado = 0
                 },
                 new Servicio
@@ -29,6 +31,7 @@ namespace IntegradorNET.DataAccess.DatabaseSeeding
                     Id = 3,
                     Descripcion = "Ingeniería de Reservorios",
                     Estado = (EstadoServicio)0,
+                    ValorHora = 750,
                     Eliminado = 0
                 },
                 new Servicio
@@ -36,6 +39,7 @@ namespace IntegradorNET.DataAccess.DatabaseSeeding
                     Id = 4,
                     Descripcion = "Transporte y Logística",
                     Estado = (EstadoServicio)1,
+                    ValorHora = 500,
                     Eliminado = 0
                 },
                 new Servicio
@@ -43,6 +47,7 @@ namespace IntegradorNET.DataAccess.DatabaseSeeding
                     Id = 5,
                     Descripcion = "Mantenimiento de Plataformas Offshore",
                     Estado = (EstadoServicio)1,
+                    ValorHora = 1500,
                     Eliminado = 0
                 });
         }

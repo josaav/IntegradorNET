@@ -118,6 +118,10 @@ namespace IntegradorNET.Migrations
                         .HasColumnType("int")
                         .HasColumnName("estado");
 
+                    b.Property<decimal>("ValorHora")
+                        .HasColumnType("DECIMAL(19,2)")
+                        .HasColumnName("valorHora");
+
                     b.HasKey("Id");
 
                     b.ToTable("Servicios");
@@ -128,35 +132,40 @@ namespace IntegradorNET.Migrations
                             Id = 1,
                             Descripcion = "Exploración Geofísica",
                             Eliminado = 0,
-                            Estado = 1
+                            Estado = 1,
+                            ValorHora = 500m
                         },
                         new
                         {
                             Id = 2,
                             Descripcion = "Peforación Direccional y Horizontal",
                             Eliminado = 0,
-                            Estado = 1
+                            Estado = 1,
+                            ValorHora = 1000m
                         },
                         new
                         {
                             Id = 3,
                             Descripcion = "Ingeniería de Reservorios",
                             Eliminado = 0,
-                            Estado = 0
+                            Estado = 0,
+                            ValorHora = 750m
                         },
                         new
                         {
                             Id = 4,
                             Descripcion = "Transporte y Logística",
                             Eliminado = 0,
-                            Estado = 1
+                            Estado = 1,
+                            ValorHora = 500m
                         },
                         new
                         {
                             Id = 5,
                             Descripcion = "Mantenimiento de Plataformas Offshore",
                             Eliminado = 0,
-                            Estado = 1
+                            Estado = 1,
+                            ValorHora = 1500m
                         });
                 });
 
@@ -212,7 +221,7 @@ namespace IntegradorNET.Migrations
                             CantHoras = 35,
                             Costo = 10500m,
                             Eliminado = 0,
-                            Fecha = new DateTime(2023, 9, 16, 2, 40, 57, 654, DateTimeKind.Local).AddTicks(4950),
+                            Fecha = new DateTime(2023, 9, 24, 18, 21, 25, 69, DateTimeKind.Local).AddTicks(1450),
                             ProyectoId = 1,
                             ServicioId = 2,
                             ValorHora = 300m
@@ -223,7 +232,7 @@ namespace IntegradorNET.Migrations
                             CantHoras = 48,
                             Costo = 19200m,
                             Eliminado = 0,
-                            Fecha = new DateTime(2023, 9, 16, 2, 40, 57, 654, DateTimeKind.Local).AddTicks(4970),
+                            Fecha = new DateTime(2023, 9, 24, 18, 21, 25, 69, DateTimeKind.Local).AddTicks(1480),
                             ProyectoId = 4,
                             ServicioId = 5,
                             ValorHora = 400m
@@ -234,7 +243,7 @@ namespace IntegradorNET.Migrations
                             CantHoras = 35,
                             Costo = 11200m,
                             Eliminado = 0,
-                            Fecha = new DateTime(2023, 9, 16, 2, 40, 57, 654, DateTimeKind.Local).AddTicks(4970),
+                            Fecha = new DateTime(2023, 9, 24, 18, 21, 25, 69, DateTimeKind.Local).AddTicks(1480),
                             ProyectoId = 4,
                             ServicioId = 2,
                             ValorHora = 320m
@@ -245,7 +254,7 @@ namespace IntegradorNET.Migrations
                             CantHoras = 60,
                             Costo = 12000m,
                             Eliminado = 0,
-                            Fecha = new DateTime(2023, 9, 16, 2, 40, 57, 654, DateTimeKind.Local).AddTicks(4980),
+                            Fecha = new DateTime(2023, 9, 24, 18, 21, 25, 69, DateTimeKind.Local).AddTicks(1480),
                             ProyectoId = 2,
                             ServicioId = 3,
                             ValorHora = 200m
@@ -256,7 +265,7 @@ namespace IntegradorNET.Migrations
                             CantHoras = 35,
                             Costo = 15750m,
                             Eliminado = 0,
-                            Fecha = new DateTime(2023, 9, 16, 2, 40, 57, 654, DateTimeKind.Local).AddTicks(4980),
+                            Fecha = new DateTime(2023, 9, 24, 18, 21, 25, 69, DateTimeKind.Local).AddTicks(1480),
                             ProyectoId = 1,
                             ServicioId = 1,
                             ValorHora = 450m
@@ -267,7 +276,7 @@ namespace IntegradorNET.Migrations
                             CantHoras = 50,
                             Costo = 15000m,
                             Eliminado = 0,
-                            Fecha = new DateTime(2023, 9, 16, 2, 40, 57, 654, DateTimeKind.Local).AddTicks(4980),
+                            Fecha = new DateTime(2023, 9, 24, 18, 21, 25, 69, DateTimeKind.Local).AddTicks(1480),
                             ProyectoId = 3,
                             ServicioId = 1,
                             ValorHora = 300m
@@ -278,7 +287,7 @@ namespace IntegradorNET.Migrations
                             CantHoras = 45,
                             Costo = 18500m,
                             Eliminado = 0,
-                            Fecha = new DateTime(2023, 9, 16, 2, 40, 57, 654, DateTimeKind.Local).AddTicks(4980),
+                            Fecha = new DateTime(2023, 9, 24, 18, 21, 25, 69, DateTimeKind.Local).AddTicks(1490),
                             ProyectoId = 5,
                             ServicioId = 4,
                             ValorHora = 400m

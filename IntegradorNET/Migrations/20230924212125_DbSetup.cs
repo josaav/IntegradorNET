@@ -33,7 +33,8 @@ namespace IntegradorNET.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     descr = table.Column<string>(type: "VARCHAR(200)", nullable: false),
                     estado = table.Column<int>(type: "int", nullable: false),
-                    eliminado = table.Column<int>(type: "int", nullable: false)
+                    eliminado = table.Column<int>(type: "int", nullable: false),
+                    valorHora = table.Column<decimal>(type: "DECIMAL(19,2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -103,14 +104,14 @@ namespace IntegradorNET.Migrations
 
             migrationBuilder.InsertData(
                 table: "Servicios",
-                columns: new[] { "codServicio", "descr", "eliminado", "estado" },
+                columns: new[] { "codServicio", "descr", "eliminado", "estado", "valorHora" },
                 values: new object[,]
                 {
-                    { 1, "Exploración Geofísica", 0, 1 },
-                    { 2, "Peforación Direccional y Horizontal", 0, 1 },
-                    { 3, "Ingeniería de Reservorios", 0, 0 },
-                    { 4, "Transporte y Logística", 0, 1 },
-                    { 5, "Mantenimiento de Plataformas Offshore", 0, 1 }
+                    { 1, "Exploración Geofísica", 0, 1, 500m },
+                    { 2, "Peforación Direccional y Horizontal", 0, 1, 1000m },
+                    { 3, "Ingeniería de Reservorios", 0, 0, 750m },
+                    { 4, "Transporte y Logística", 0, 1, 500m },
+                    { 5, "Mantenimiento de Plataformas Offshore", 0, 1, 1500m }
                 });
 
             migrationBuilder.InsertData(
@@ -128,13 +129,13 @@ namespace IntegradorNET.Migrations
                 columns: new[] { "codTrabajo", "cantHoras", "costo", "eliminado", "fecha", "codProyecto", "codServicio", "valorHora" },
                 values: new object[,]
                 {
-                    { 1, 35, 10500m, 0, new DateTime(2023, 9, 16, 2, 40, 57, 654, DateTimeKind.Local).AddTicks(4950), 1, 2, 300m },
-                    { 2, 48, 19200m, 0, new DateTime(2023, 9, 16, 2, 40, 57, 654, DateTimeKind.Local).AddTicks(4970), 4, 5, 400m },
-                    { 3, 35, 11200m, 0, new DateTime(2023, 9, 16, 2, 40, 57, 654, DateTimeKind.Local).AddTicks(4970), 4, 2, 320m },
-                    { 4, 60, 12000m, 0, new DateTime(2023, 9, 16, 2, 40, 57, 654, DateTimeKind.Local).AddTicks(4980), 2, 3, 200m },
-                    { 5, 35, 15750m, 0, new DateTime(2023, 9, 16, 2, 40, 57, 654, DateTimeKind.Local).AddTicks(4980), 1, 1, 450m },
-                    { 6, 50, 15000m, 0, new DateTime(2023, 9, 16, 2, 40, 57, 654, DateTimeKind.Local).AddTicks(4980), 3, 1, 300m },
-                    { 7, 45, 18500m, 0, new DateTime(2023, 9, 16, 2, 40, 57, 654, DateTimeKind.Local).AddTicks(4980), 5, 4, 400m }
+                    { 1, 35, 10500m, 0, new DateTime(2023, 9, 24, 18, 21, 25, 69, DateTimeKind.Local).AddTicks(1450), 1, 2, 300m },
+                    { 2, 48, 19200m, 0, new DateTime(2023, 9, 24, 18, 21, 25, 69, DateTimeKind.Local).AddTicks(1480), 4, 5, 400m },
+                    { 3, 35, 11200m, 0, new DateTime(2023, 9, 24, 18, 21, 25, 69, DateTimeKind.Local).AddTicks(1480), 4, 2, 320m },
+                    { 4, 60, 12000m, 0, new DateTime(2023, 9, 24, 18, 21, 25, 69, DateTimeKind.Local).AddTicks(1480), 2, 3, 200m },
+                    { 5, 35, 15750m, 0, new DateTime(2023, 9, 24, 18, 21, 25, 69, DateTimeKind.Local).AddTicks(1480), 1, 1, 450m },
+                    { 6, 50, 15000m, 0, new DateTime(2023, 9, 24, 18, 21, 25, 69, DateTimeKind.Local).AddTicks(1480), 3, 1, 300m },
+                    { 7, 45, 18500m, 0, new DateTime(2023, 9, 24, 18, 21, 25, 69, DateTimeKind.Local).AddTicks(1490), 5, 4, 400m }
                 });
 
             migrationBuilder.CreateIndex(

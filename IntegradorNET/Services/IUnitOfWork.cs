@@ -8,6 +8,7 @@ namespace IntegradorNET.Services
 	{
 		public UsuarioRepository UsuarioRepository { get; }
         public ProyectoRepository ProyectoRepository { get; }
+        public ServicioRepository ServicioRepository { get; }
         Task<int> Complete();
 	}
 }
