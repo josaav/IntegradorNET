@@ -35,7 +35,7 @@ namespace IntegradorNET.Controllers
 				Nombre = userCredentials.Nombre,
 				Dni = userCredentials.Dni,
 				Email = userCredentials.Email,
-				Tipo = new TipoUsuarioLoginDto
+				Tipo = new TipoUsuarioDto
 				{
 					Id = (int)userCredentials.Tipo,
 					Nombre = userCredentials.Tipo.ToString()
