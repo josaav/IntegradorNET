@@ -1,10 +1,11 @@
 ﻿using System;
+using IntegradorNET.DataAccess.Repositories.Interfaces;
 using IntegradorNET.DTOs;
 using IntegradorNET.Entities;
 using IntegradorNET.Helpers;
 using Microsoft.EntityFrameworkCore;
 
-namespace IntegradorNET.DataAccess.Repositories.Interfaces
+namespace IntegradorNET.DataAccess.Repositories
 {
 	public class UsuarioRepository : Repository<Entities.Usuario>, IUsuarioRepository
 	{

@@ -24,10 +24,13 @@ namespace IntegradorNET.Controllers
         }
 
         /// <summary>
-        /// Devuelve todos los usuarios
+        /// Devuelve todos los usuarios. Toma dos parámetros opcionales de la ruta,
+        /// con los cuales realiza un paginado, "items" (cantidad de items por página) y "pagina"
+        /// (número de página). De no ser enviados dichos parámetros, la página que muestra primero
+        /// es la primera, y hay 10 ítems por página.
         /// </summary>
         /// <returns>Retorna todos los usuarios</returns>
-        
+
         [Authorize(Policy = "AdminConsultor")]
         [HttpGet]
         public async Task<IActionResult> ObtenerUsuarios()
@@ -64,7 +67,7 @@ namespace IntegradorNET.Controllers
         /// <summary>
         /// Retorna los datos de un usuario con un Id determinado.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Id del usuario</param>
         /// <returns>Si el usuario existe, retornará un status code 200 y sus datos, caso contrario
         /// retornará un error 500</returns>
      
@@ -101,7 +104,7 @@ namespace IntegradorNET.Controllers
         /// <summary>
         /// Registra el usuario
         /// </summary>
-        /// <param name="dto"></param>
+        /// <param name="dto">Usuario a registrar</param>
         /// <returns>Devuelve un status code 201 si se registró con éxito, status code 409 si es que ya
         /// existe un usuario registrado con el mismo email</returns>
 
@@ -122,8 +125,8 @@ namespace IntegradorNET.Controllers
         /// <summary>
         /// Actualiza un usuario
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="dto"></param>
+        /// <param name="id">Id del usuario a actualizar</param>
+        /// <param name="dto">Propiedades del usuario a actualizar</param>
         /// <returns>Devuelve un status code 200 si es que el usuario pudo ser actualizado, de lo contrario
         /// devuelve un error 500.</returns>
 
@@ -147,7 +150,7 @@ namespace IntegradorNET.Controllers
         /// <summary>
         /// Elimina un usuario (borrado lógico), actualizando el campo "Eliminado" y haciéndolo equivalente a 1
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Id del usuario a eliminar</param>
         /// <returns>Devuelve un status code 200 en el caso de que pueda eliminarse, de lo contrario
         /// devuelve un error 500</returns>
 
@@ -173,12 +176,12 @@ namespace IntegradorNET.Controllers
         /// Restaura un usuario que ha sido borrado lógicamente, actualizando el campo "Eliminado" y volviéndolo
         /// equivalente a 0
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">Id del usuario a restaurar</param>
         /// <returns>Retorna un status code 200 si es que el usuario pudo ser restaurado exitosamente, de lo contrario
         /// retorna un error 500</returns>
 
         [Authorize(Policy = "Admin")]
-        [HttpPut("/Restaurar/{id}")]
+        [HttpPut("/api/Usuario/Restaurar/{id}")]
         public async Task<IActionResult> RestaurarUsuario([FromRoute] int id)
         {
             var resultado = await _unitOfWork.UsuarioRepository.Restaurar(id);
@@ -192,7 +195,6 @@ namespace IntegradorNET.Controllers
                 await _unitOfWork.Complete();
                 return ResponseFactory.CreateSuccessResponse(200, "Usuario restaurado con éxito");
             }
-
         }
 
 

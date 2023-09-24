@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+	<assembly>
+		<name>IntegradorNET</name>
+	</assembly>
+	<members>
+		<member name="M:IntegradorNET.Controllers.LoginController>
+			<summary>
+			
+			</summary>
+	
+		</member>
+	</members
+</doc>

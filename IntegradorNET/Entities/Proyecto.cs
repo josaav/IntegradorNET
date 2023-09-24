@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using IntegradorNET.DTOs;
 
 namespace IntegradorNET.Entities
 {
@@ -27,6 +28,28 @@ namespace IntegradorNET.Entities
 
         [Column("eliminado")]
         public int Eliminado { get; set; } = 0;
+
+
+        public Proyecto(ProyectoNuevoDto dto)
+        {
+            Nombre = dto.Nombre;
+            Direccion = dto.Direccion;
+            Estado = (EstadoProyecto)dto.Estado;
+        }
+
+        public Proyecto(ProyectoNuevoDto dto, int id)
+        {
+            Id = id;
+            Nombre = dto.Nombre;
+            Direccion = dto.Direccion;
+            Estado = (EstadoProyecto)dto.Estado;
+        }
+
+        public Proyecto()
+        {
+
+        }
+
     }
 }
 

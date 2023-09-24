@@ -1,5 +1,6 @@
 ﻿using System;
 using IntegradorNET.DataAccess;
+using IntegradorNET.DataAccess.Repositories;
 using IntegradorNET.DataAccess.Repositories.Interfaces;
 
 namespace IntegradorNET.Services
@@ -8,11 +9,13 @@ namespace IntegradorNET.Services
 	{
         private readonly ApplicationDbContext _context;
         public UsuarioRepository UsuarioRepository { get; private set; }
+        public ProyectoRepository ProyectoRepository { get; private set; }
 
         public UnitOfWorkService(ApplicationDbContext context)
         {
             _context = context;
             UsuarioRepository = new UsuarioRepository(_context);
+            ProyectoRepository = new ProyectoRepository(_context);
         }
 
         public Task<int> Complete()

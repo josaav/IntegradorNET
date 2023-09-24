@@ -1,4 +1,5 @@
 ﻿using System;
+using IntegradorNET.DataAccess.Repositories;
 using IntegradorNET.DataAccess.Repositories.Interfaces;
 
 namespace IntegradorNET.Services
@@ -6,7 +7,8 @@ namespace IntegradorNET.Services
 	public interface IUnitOfWork
 	{
 		public UsuarioRepository UsuarioRepository { get; }
-		Task<int> Complete();
+        public ProyectoRepository ProyectoRepository { get; }
+        Task<int> Complete();
 	}
 }
 
