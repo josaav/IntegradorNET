@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using IntegradorNET.DTOs;
 
 namespace IntegradorNET.Entities
 {
@@ -35,6 +36,20 @@ namespace IntegradorNET.Entities
 
         [Column("eliminado")]
         public int Eliminado { get; set; } = 0;
+
+        public Trabajo(TrabajoNuevoDto dto, int id)
+        {
+            Id = id;
+            Fecha = dto.Fecha;
+            ProyectoId = dto.CodProyecto;
+            ServicioId = dto.CodServicio;
+            CantHoras = dto.CantHoras;
+        }
+
+        public Trabajo()
+        {
+        }
+
     }
 }
 

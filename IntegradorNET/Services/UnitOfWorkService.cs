@@ -11,6 +11,7 @@ namespace IntegradorNET.Services
         public UsuarioRepository UsuarioRepository { get; private set; }
         public ProyectoRepository ProyectoRepository { get; private set; }
         public ServicioRepository ServicioRepository { get; private set; }
+        public TrabajoRepository TrabajoRepository { get; private set; }
 
         public UnitOfWorkService(ApplicationDbContext context)
         {
@@ -18,6 +19,7 @@ namespace IntegradorNET.Services
             UsuarioRepository = new UsuarioRepository(_context);
             ProyectoRepository = new ProyectoRepository(_context);
             ServicioRepository = new ServicioRepository(_context);
+            TrabajoRepository = new TrabajoRepository(_context);
         }
 
         public Task<int> Complete()
