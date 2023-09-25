@@ -86,7 +86,8 @@ namespace IntegradorNET.Controllers
                 {
                     Id = (int)entity.Estado,
                     Nombre = entity.Estado.ToString()
-                }
+                },
+                Eliminado = entity.Eliminado
             }).ToList();
 
             int paginaPorMostrar = 1;
@@ -130,7 +131,8 @@ namespace IntegradorNET.Controllers
                     {
                         Id = (int)resultado.Estado,
                         Nombre = resultado.Estado.ToString()
-                    }
+                    },
+                    Eliminado = resultado.Eliminado
                 };
 
                 return ResponseFactory.CreateSuccessResponse(200, proyecto);

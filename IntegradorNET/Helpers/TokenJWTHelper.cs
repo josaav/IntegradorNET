@@ -31,7 +31,7 @@ namespace IntegradorNET.Helpers
 
             var securityToken = new JwtSecurityToken(
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(60),
+                expires: DateTime.Now.AddHours(12),
                 signingCredentials: credentials
                 );
 

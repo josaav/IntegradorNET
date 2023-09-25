@@ -86,6 +86,7 @@ namespace IntegradorNET.Controllers
                     Nombre = entity.Estado.ToString()
                 },
                 ValorHora = entity.ValorHora,
+                Eliminado = entity.Eliminado
             }).ToList();
 
             int paginaPorMostrar = 1;
@@ -130,6 +131,7 @@ namespace IntegradorNET.Controllers
                         Nombre = resultado.Estado.ToString()
                     },
                     ValorHora = resultado.ValorHora,
+                    Eliminado = resultado.Eliminado
                 };
 
                 return ResponseFactory.CreateSuccessResponse(200, servicio);

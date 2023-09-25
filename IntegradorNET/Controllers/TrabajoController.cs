@@ -47,7 +47,8 @@ namespace IntegradorNET.Controllers
                 DescripcionServicio = entity.Servicio.Descripcion,
                 CantHoras = entity.CantHoras,
                 ValorHora = entity.ValorHora,
-                Costo = entity.Costo
+                Costo = entity.Costo,
+                Eliminado = entity.Eliminado
             }).ToList();
 
             int paginaPorMostrar = 1;
@@ -92,7 +93,8 @@ namespace IntegradorNET.Controllers
                     DescripcionServicio = resultado.Servicio.Descripcion,
                     CantHoras = resultado.CantHoras,
                     ValorHora = resultado.ValorHora,
-                    Costo = resultado.Costo
+                    Costo = resultado.Costo,
+                    Eliminado = resultado.Eliminado
                 };
 
                 return ResponseFactory.CreateSuccessResponse(200, trabajo);
@@ -169,8 +171,8 @@ namespace IntegradorNET.Controllers
         /// Restaura un trabajo que ha sido borrado lógicamente, actualizando el campo "Eliminado" y volviéndolo
         /// equivalente a 0
         /// </summary>
-        /// <param name="id">Id del servicio a restaurar</param>
-        /// <returns>Retorna un status code 200 si es que el servicio pudo ser restaurado exitosamente, de lo contrario
+        /// <param name="id">Id del trabajo a restaurar</param>
+        /// <returns>Retorna un status code 200 si es que el trabajo pudo ser restaurado exitosamente, de lo contrario
         /// retorna un error 500</returns>
 
         [Authorize(Policy = "Admin")]

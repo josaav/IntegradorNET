@@ -7,6 +7,7 @@ namespace IntegradorNET.DTOs
 		public string Nombre { get; set; }
 		public string Direccion { get; set; }
 		public EstadoProyectoDto Estado { get; set; }
+		public int Eliminado { get; set; }
 	}
 }
 

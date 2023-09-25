@@ -12,6 +12,7 @@ namespace IntegradorNET.DTOs
         public int CantHoras { get; set; }
         public double ValorHora { get; set; }
         public double Costo { get; set; }
+        public int Eliminado { get; set; }
     }
 }
 

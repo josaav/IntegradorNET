@@ -37,7 +37,7 @@ namespace IntegradorNET.Controllers
         {
             var usuarios = await _unitOfWork.UsuarioRepository.ObtenerTodos();
 
-            List<UsuarioListaDto> lista = usuarios.Select(entity => new UsuarioListaDto
+            List<UsuarioDetalleDto> lista = usuarios.Select(entity => new UsuarioDetalleDto
             {
                 codUsuario = entity.Id,
                 Nombre = entity.Nombre,
@@ -47,7 +47,8 @@ namespace IntegradorNET.Controllers
                 {
                     Id = (int)entity.Tipo,
                     Nombre = entity.Tipo.ToString()
-                }
+                },
+                Eliminado = entity.Eliminado
             }).ToList();
 
             int paginaPorMostrar = 1;
@@ -83,7 +84,7 @@ namespace IntegradorNET.Controllers
             }
             else
             {
-                var usuario = new UsuarioListaDto()
+                var usuario = new UsuarioDetalleDto()
                 {
                     codUsuario = resultado.Id,
                     Nombre = resultado.Nombre,
@@ -93,7 +94,8 @@ namespace IntegradorNET.Controllers
                     {
                         Id = (int)resultado.Tipo,
                         Nombre = resultado.Tipo.ToString()
-                    }
+                    },
+                    Eliminado = resultado.Eliminado
                 };
 
                 return ResponseFactory.CreateSuccessResponse(200, usuario);
