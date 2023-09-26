@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using IntegradorNET.DTOs;
 
 namespace IntegradorNET.Entities
 {
@@ -9,26 +10,46 @@ namespace IntegradorNET.Entities
         [Column("codTrabajo")]
         public int Id { get; set; }
 
-        [Column("fecha", TypeName = "DATETIME")]
+        [Column("fecha")]
         public DateTime Fecha { get; set; }
 
-		[ForeignKey("codProyecto")]
-		public Proyecto Proyecto { get; set; }
+        [Column("codProyecto")]
+        public int ProyectoId { get; set; }
 
-        [ForeignKey("codServicio")]
-        public Servicio Servicio { get; set; }
+        [ForeignKey("ProyectoId")]
+        public Proyecto? Proyecto { get; set; }
+
+        [Column("codServicio")]
+        public int ServicioId { get; set; }
+
+        [ForeignKey("ServicioId")]
+        public Servicio? Servicio { get; set; }
 
         [Column("cantHoras")]
         public int CantHoras { get; set; }
 
-        [Column("valorHora", TypeName = "DECIMAL(19,4)")]
-        public int ValorHora { get; set; }
+        [Column("valorHora", TypeName = "DECIMAL(19,2)")]
+        public double ValorHora { get; set; }
 
-        [Column("costo", TypeName = "DECIMAL(19,4)")]
-        public int Costo { get; set; }
+        [Column("costo", TypeName = "DECIMAL(19,2)")]
+        public double Costo { get; set; }
 
         [Column("eliminado")]
         public int Eliminado { get; set; } = 0;
+
+        public Trabajo(TrabajoNuevoDto dto, int id)
+        {
+            Id = id;
+            Fecha = dto.Fecha;
+            ProyectoId = dto.CodProyecto;
+            ServicioId = dto.CodServicio;
+            CantHoras = dto.CantHoras;
+        }
+
+        public Trabajo()
+        {
+        }
+
     }
 }
 
