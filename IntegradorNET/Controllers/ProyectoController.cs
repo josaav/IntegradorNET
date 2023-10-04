@@ -46,7 +46,8 @@ namespace IntegradorNET.Controllers
                 {
                     Id = (int)entity.Estado,
                     Nombre = entity.Estado.ToString()
-                }
+                },
+                Eliminado = entity.Eliminado
             }).ToList();
 
             int paginaPorMostrar = 1;

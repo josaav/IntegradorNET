@@ -18,7 +18,6 @@ namespace IntegradorNET.DataAccess.Repositories
             var lista = await _context.Set<Trabajo>()
                 .Include(b => b.Proyecto)
                 .Include(b => b.Servicio)
-                .Where(proyecto => (int)proyecto.Eliminado == 0)
                 .ToListAsync();
             return lista;
         }
