@@ -1,33 +1,19 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{A5038715-AF7E-4D76-B930-57308ABC76CA}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.IntegradorNET PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
-  <MonoDevelop.Ide.Workbench ActiveDocument="IntegradorNET/Helpers/PasswordEncryptHelper.cs">
-    <Files>
-      <File FileName="IntegradorNET/Entities/Servicio.cs" Line="22" Column="51" />
-      <File FileName="IntegradorNET/DataAccess/DatabaseSeeding/ServicioSeeder.cs" Line="7" Column="2" />
-      <File FileName="IntegradorNET/DataAccess/DatabaseSeeding/UsuarioSeeder.cs" Line="7" Column="1" />
-      <File FileName="IntegradorNET/Entities/Usuario.cs" Line="30" Column="54" />
-      <File FileName="IntegradorNET/DataAccess/DatabaseSeeding/ProyectoSeeder.cs" Line="8" Column="28" />
-      <File FileName="IntegradorNET/Entities/Proyecto.cs" Line="23" Column="46" />
-      <File FileName="IntegradorNET/DataAccess/ApplicationDbContext.cs" Line="25" Column="36" />
-      <File FileName="IntegradorNET/appsettings.json" />
-      <File FileName="IntegradorNET/Program.cs" />
-      <File FileName="IntegradorNET/DataAccess/DatabaseSeeding/IEntitySeeder.cs" Line="8" Column="6" />
-      <File FileName="IntegradorNET/DataAccess/DatabaseSeeding/TrabajoSeeder.cs" Line="86" Column="35" />
-      <File FileName="IntegradorNET/Entities/Trabajo.cs" Line="34" Column="42" />
-      <File FileName="IntegradorNET/Migrations/ApplicationDbContextModelSnapshot.cs" Line="1" Column="1" />
-      <File FileName="IntegradorNET/Helpers/PasswordEncryptHelper.cs" Line="44" Column="28" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="IntegradorNET">
             <Node name="IntegradorNET">
-              <Node name="Entities" expanded="True" />
-              <Node name="Helpers" expanded="True">
-                <Node name="PasswordEncryptHelper.cs" selected="True" />
+              <Node name="Controllers">
+                <Node name="ServicioController.cs" selected="True" />
               </Node>
+              <Node name="DataAccess" expanded="True">
+                <Node name="Repositories" expanded="True" />
+              </Node>
+              <Node name="DTOs" expanded="True" />
+              <Node name="Entities" expanded="True" />
+              <Node name="Helpers" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -35,5 +21,10 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.IntegradorNET PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

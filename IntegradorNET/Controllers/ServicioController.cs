@@ -47,6 +47,7 @@ namespace IntegradorNET.Controllers
                     Nombre = entity.Estado.ToString()
                 },
                 ValorHora = entity.ValorHora,
+                Eliminado = entity.Eliminado
             }).ToList();
 
             int paginaPorMostrar = 1;
